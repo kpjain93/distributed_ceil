@@ -1,4 +1,4 @@
-# kapil_mtp 
+# Distributed CEIL 
 
 ### pre-requisites
 
