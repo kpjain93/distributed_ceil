@@ -1,21 +1,25 @@
 # distributed_ceil
-pre-requisites
 
-    [Spark] (http://spark.apache.org/) 0.9.0 or later
-    [graphX] (http://spark.apache.org/docs/latest/graphx-programming-guide.html)
-    [Gradle] (http://www.gradle.org/)
+### pre-requisites
 
-build
+ * [Spark]  (http://spark.apache.org/)   0.9.0 or later
+ * [graphX]  (http://spark.apache.org/docs/latest/graphx-programming-guide.html) 
+ * [Gradle] (http://www.gradle.org/) 
+
+### build
 
 If necessary edit the build.gradle file to set your version of spark and graphX. Execute the following command inside kapil_mtp directory.
 
-    gradle clean dist
+> gradle clean dist
 
 Check the build/dist folder for kapil_mtp-0.1.jar.
-Running Distributed CEIL
+
+
+### Running Distributed CEIL
 
 After building the package (See above), you can execute the distributed CEIL algorithm against an edge list using the provided script
 
+```
 bin/dceil [options] [<property>=<value>....]
 
   -i <value> | --input <value>
@@ -41,18 +45,24 @@ bin/dceil [options] [<property>=<value>....]
   -z <value> | --ipaddress <value>
         Set to true to convert ipaddresses to Long ids. Defaults to false
   <property>=<value>....
+```
 
 To run a small local example execute:
-
+```
 bin/dceil -i examples/input150.txt -o test_output --edgedelimiter "\t" 2> stderr.txt
+```
 
-Spark produces a lot of output, so sending stderr to a log file is recommended. Examine the test_output folder. you should see the structure as shown below:
+Spark produces a lot of output, so sending stderr to a log file is recommended.  Examine the test_output folder. you should see the structure as shown below:
 
+```
 test_output/
 ├── level_0_vertices
-│   ├── _SUCCESS
-│   └── part-00000
+│   ├── _SUCCESS
+│   └── part-00000
 
+```
+
+```
 
 ### running DCEIL on a cluster
 
