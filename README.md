@@ -1,4 +1,5 @@
-distributed_ceil
+Distributed CEIL
+
 pre-requisites
 
     [Spark] (http://spark.apache.org/) 0.9.0 or later
